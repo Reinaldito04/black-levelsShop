@@ -1,0 +1,129 @@
+/* Global styles */
+@import url('https://fonts.cdnfonts.com/css/conthrax');
+:root {
+  --background: #252525;
+  --background-light: #fdebf3;
+  --button: #78c2ad;
+  --text: #fdebf3;
+  --text-light: #1e1e2e;
+  --text-link: #78c2ad;
+  --underline: #375a7f;
+  --header: "Pacifico", cursive;
+  --body: "Josefin Sans", sans-serif;
+}
+
+html {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Theme Icon */
+html.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+.light .Header {
+  background-color: #fdebf3;
+}
+.Header {
+  background-color: #252525; /* Cambia el color de fondo para el modo oscuro */
+}
+
+section {
+  background-color: #252525;
+}
+.light section {
+  background-color: #fdebf3;
+}
+
+.light h2 {
+  color: #1e1e2e;
+}
+.light .card-productoIndividual{
+    outline: 0.5px solid red;
+    background-color: #b4a8a8;
+}
+.card-productoIndividual{
+    outline: 0.5px solid red;
+    background-color: #b4a8a8;
+}
+.light .contenedor-cardDestacado{
+    outline: 2px solid black;
+}
+.contenedor-cardDestacado{
+    outline: 2px solid white;
+}
+
+.light .zapatoDestacadoCard{
+    outline: 2px solid black;
+}
+.zapatoDestacadoCard{
+    outline: 2px solid white;
+}
+.light .swiper-button-prev,
+.light .swiper-button-next {
+  color: red !important; /* Asegura que el color se aplique incluso si hay otras reglas que intenten anularlo */
+  transition: all 0.8s;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important; 
+  transition: all 0.8s;/* Color por defecto para las flechas de navegación */
+}
+h2 {
+  color: #fdebf3;
+}
+
+*{
+    font-family: 'Conthrax', sans-serif;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .light .swiper-pagination-bullet{
+    background-color: red !important;
+    transition: all 0.8s;
+  }
+  .swiper-pagination-bullet {
+    background-color: white !important; /* Cambia el color de fondo de los bullets */
+    transition: all 0.8s;
+    /* Ajusta el tamaño de los bullets si es necesario */
+  
+  }
+
+
+  .light footer{
+    background-color:#fdebf3 ;
+    color: black;
+  }
+  .light .p-copy{
+    color: black;
+  }
+   .p-copy{
+    color: white;
+  }
+  footer{
+    color: white;
+    background-color: #252525;
+  }

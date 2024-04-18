@@ -1,0 +1,59 @@
+---
+import ThemeIcon from "./ThemeIcon.astro"
+---
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/LOGO.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" >Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Información</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="ml-auto">
+            <ThemeIcon/>
+        </div>
+    </div>
+</nav>
+<style>
+    nav{
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+        background-color: #F20505;
+    }
+   
+.navbar-nav {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    li a{
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    img {
+        height: 80px;
+        width: 80px;
+        display: block;
+    }
+    
+</style>

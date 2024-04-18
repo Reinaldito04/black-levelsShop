@@ -1,0 +1,38 @@
+---
+import CardDestacado from "./CardDestacado.astro";
+import CardDestacado2 from "./CardDestacado2.astro";
+import ZapatoCard from "./ZapatoCard.astro";
+---
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <CardDestacado />
+      </div>
+      <div class="col-md-3">
+        <ZapatoCard />
+      </div>
+      <div class="col-md-3">
+        <ZapatoCard />
+      </div>
+    </div>
+    <div class="row">
+       
+        <div class="col-md-3">
+          <ZapatoCard />
+        </div>
+        <div class="col-md-3">
+          <ZapatoCard />
+        </div>
+        <div class="col-md-6">
+            <CardDestacado2 />
+          </div>
+      </div>
+  </div>
+</section>
+<style>
+    .row{
+        padding-top: 10px;  
+    }
+</style>
