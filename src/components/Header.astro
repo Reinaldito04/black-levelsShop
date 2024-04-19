@@ -2,7 +2,7 @@
 ---
 import Banner from "./Banner";
 ---
-<section class="Header">
+<section class="Header" id="Home">
     <div class="container-fluid">
 
 
@@ -27,6 +27,15 @@ section{
     height: 100dvh   ;
    
 }
-
+@media only screen and (min-width: 601px) and (max-width: 1024px){
+    section{
+        height: 70dvh;
+    }
+}
+@media only screen and (max-width: 600px){
+    section{
+        height: 60dvh;
+    }
+}
 
 </style>

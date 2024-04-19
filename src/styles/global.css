@@ -112,13 +112,42 @@ h2 {
   
   }
 
-
+  @media only screen and (min-width: 601px) and (max-width: 1024px){
+    .swiper-slide img{
+      width: 100%;
+      
+      height: 100%;
+    }
+  }
+  @media only screen and (max-width: 600px){
+      .swiper-slide{
+        margin: 0 auto;
+      }
+      .swiper-slide img{
+        margin: 0 auto;
+        margin-top: 10%;
+      }
+  }
   .light footer{
     background-color:#fdebf3 ;
     color: black;
   }
   .light .p-copy{
     color: black;
+  }
+
+  .light .linkFooter:hover{
+    color: black;
+  }
+  .linkFooter:hover{
+    color: white;
+  }
+
+  .light .linkFooter{
+    color: red;
+  }
+  .linkFooter{
+    color: gray;
   }
    .p-copy{
     color: white;

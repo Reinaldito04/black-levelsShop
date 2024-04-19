@@ -1,34 +1,71 @@
-<footer class="footer mt-auto py-5 ">
-    <div class="container">
+<footer class="footer  mt-auto py-5 " id="Contact">
+    <div class="container contenedor">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-6">
                 <h5>Información</h5>
                 <p>Contáctanos:</p>
                 <p>Teléfono: (123) 456-7890</p>
                 <p>Correo electrónico: info@example.com</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-6">
                 <h5>Enlaces rápidos</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Acerca de nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a class="linkFooter" href="#">Inicio</a></li>
+                    <li><a class="linkFooter" href="#">Productos</a></li>
+                    <li><a class="linkFooter" href="#">Acerca de nosotros</a></li>
+                    <li><a class="linkFooter" href="#">Contacto</a></li>
                 </ul>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-12">
                 <h5>Suscríbete</h5>
                 <p>Suscríbete a nuestro boletín para recibir las últimas novedades y ofertas.</p>
                 <form>
                     <div class="form-group">
                         <input type="email" class="form-control" placeholder="Correo electrónico">
                     </div>
-                    <button type="submit" class="btn btn-light">Suscribirse</button>
+                    <button type="submit" class="btn btn-light mt-2">Suscribirse</button>
                 </form>
             </div>
         </div>
     </div>
-    <div class="container text-center mt-3">
+    <div class="container contenedor-copyright text-center mt-3">
         <p class="p-copy">© 2024 Nombre de tu Tienda de Ropa. Todos los derechos reservados.</p>
     </div>
 </footer>
+
+
+<style>
+    .contenedor{
+        padding-top: 20px;
+        border-top: 1px solid red;
+    }
+.contenedor-copyright{
+    padding-top: 10px;
+    border-top: 1px solid red;
+    
+}
+li{
+    text-decoration: none;
+
+}
+a{
+   
+    text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .col-12{
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid red;
+        padding-top: 10px;
+        text-align: center;
+    }
+}
+
+</style>
