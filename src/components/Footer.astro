@@ -30,11 +30,64 @@
     </div>
     <div class="container contenedor-copyright text-center mt-3">
         <p class="p-copy">© 2024 Nombre de tu Tienda de Ropa. Todos los derechos reservados.</p>
+        <div class="container-img container">
+            <img src="/LOGO.png" class="img-fluid logo" alt="">
+        </div>
     </div>
+
+
 </footer>
 
 
 <style>
+    .container-img{
+        height: 200px;
+        width: 200px;
+       
+        margin: 0 auto;
+        
+    }
+   
+    .logo {
+    /* Define las propiedades de transformación iniciales */
+    transform-origin: center;
+}
+
+.animar {
+    /* Agrega la animación GirarLogo */
+    animation: GirarLogo 5s;
+}
+
+@keyframes GirarLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+     img{
+        margin-top: -15%;
+        width: 100%;
+        height: 100%;
+      
+    }
+
+
+    .Rotar{
+        animation: animarLogo 2.5s infinite alternate ease;
+    }
+    @keyframes animarLogo {
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-20px);
+        }
+        100%{
+            transform: translateY(20px);
+        }
+    }
     .contenedor{
         padding-top: 20px;
         border-top: 1px solid red;
@@ -69,3 +122,38 @@ a{
 }
 
 </style>
+
+<script is:inline>
+
+    // Función para verificar si el elemento está en la vista del usuario
+function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Función para manejar la animación del logo
+function handleLogoAnimation() {
+    var logo = document.querySelector('.logo');
+    if (isElementInViewport(logo)) {
+        logo.classList.add('animar');
+        setTimeout(function() {
+            logo.classList.remove('animar');
+            logo.classList.add('Rotar');
+        }, 5000); // 5000 milisegundos = 5 segundos
+    }
+}
+
+
+// Agregar evento scroll para verificar la visibilidad del logo
+window.addEventListener('scroll', function () {
+    handleLogoAnimation();
+});
+
+// Llamar a la función una vez al cargar la página para verificar el estado inicial
+handleLogoAnimation();
+</script>

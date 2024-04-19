@@ -1,98 +1,124 @@
 ---
-
-import ThemeIcon from "./ThemeIcon.astro"
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="/LOGO.png" alt="">
-        </a>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="/LOGO.png" alt="" />
+    </a>
+   
+    <button class="navbar-toggler" type="button" id="navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#Home">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Products">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contact">Información</a>
+        </li>
         <div class="iconoMovil">
-            <ThemeIcon/>
-        </div>
-        <button class="navbar-toggler" type="button" id="navbar-toggler">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#Home">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Products">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Contact">Información</a>
-                </li>
-            </ul>
-            <div class="ml-auto iconoPC">
-                <ThemeIcon/>
-            </div>
-        </div>
-        
-       
-       
+            <ThemeIcon />
+          </div>
+      </ul>
+      <div class="ml-auto iconoPC">
+        <ThemeIcon />
+      </div>
     </div>
+  </div>
 </nav>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const navbarToggler = document.getElementById('navbar-toggler');
-    const navbarCollapse = document.getElementById('navbarSupportedContent');
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarToggler = document.getElementById("navbar-toggler");
+    const navbarCollapse = document.getElementById("navbarSupportedContent");
 
-    navbarToggler.addEventListener('click', function () {
-        if (navbarCollapse.classList.contains('show')) {
-            navbarCollapse.classList.remove('show');
-        } else {
-            navbarCollapse.classList.add('show');
-        }
+    navbarToggler.addEventListener("click", function () {
+      if (navbarCollapse.classList.contains("show")) {
+        navbarCollapse.classList.remove("show");
+      } else {
+        navbarCollapse.classList.add("show");
+      }
     });
-});
+  });
 </script>
 <style>
-
-.iconoMovil{
+  .iconoMovil {
     display: none;
- }
- @media only screen and (max-width: 1024px){
-    .iconoMovil{
-        display: block;
+  }
+  @media only screen and (max-width: 1024px) {
+    .iconoMovil {
+      display: block;
     }
-    .iconoPC{
-        display: none;
+    .iconoPC {
+      display: none;
     }
- }
+  }
 
-    .show{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    nav{
-        position: fixed;
-        width: 100%;
-        z-index: 9999;
-        background-color: #F20505;
-    }
-   
-.navbar-nav {
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        
-    }
+  .show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    background-color: #f20505;
+  }
 
-    li a{
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
-    img {
-        height: 80px;
-        width: 80px;
-        display: block;
-    }
-    
+  .navbar-nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  li a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease-out;
+    transform: translateX(-50%); /* Centra el pseudo-elemento */
+}
+
+/* Efecto de hover para animar el borde inferior */
+li:hover::after {
+    background-color: white;
+}
+
+  img {
+    height: 80px;
+    width: 80px;
+    display: block;
+  }
+  .navbar-toggler-icon {
+    transition: transform 0.3s ease-out;
+  }
+
+  .navbar-toggler:hover .navbar-toggler-icon {
+    transform: rotate(90deg);
+  }
 </style>
