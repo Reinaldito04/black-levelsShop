@@ -2,14 +2,14 @@
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light" id="Navbar">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="/LOGO.png" alt="" />
     </a>
    
-    <button class="navbar-toggler" type="button" id="navbar-toggler">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler"  type="button" id="navbar-toggler">
+      <div class="bi bi-list" id="Icono"></div>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
@@ -21,6 +21,7 @@ import ThemeIcon from "./ThemeIcon.astro";
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#Contact">Información</a>
+          
         </li>
         <div class="iconoMovil">
             <ThemeIcon />
@@ -34,20 +35,30 @@ import ThemeIcon from "./ThemeIcon.astro";
 </nav>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const navbarToggler = document.getElementById("navbar-toggler");
-    const navbarCollapse = document.getElementById("navbarSupportedContent");
+document.addEventListener('DOMContentLoaded', function () {
+    let navbarToggler = document.getElementById('navbar-toggler');
+    let navbarCollapse = document.getElementById('navbarSupportedContent');
+    let iconoBoton = document.getElementById('Icono');
+    let Navbar = document.getElementById('Navbar');
 
-    navbarToggler.addEventListener("click", function () {
-      if (navbarCollapse.classList.contains("show")) {
-        navbarCollapse.classList.remove("show");
-      } else {
-        navbarCollapse.classList.add("show");
-      }
+    navbarToggler.addEventListener('click', function () {
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+            navbarCollapse.classList.remove('animated');
+            iconoBoton.className = 'bi bi-list'; // Establecer clase del ícono del toggler en estado inicial
+            Navbar.classList.remove('Expandir');
+        } else {
+            navbarCollapse.classList.add('show');
+            navbarCollapse.classList.add('animated');
+            iconoBoton.className = 'bi bi-x-lg'; // Establecer clase del ícono del toggler en estado expandido
+            Navbar.classList.add('Expandir');
+        }
     });
-  });
+});
 </script>
 <style>
+
+
   .iconoMovil {
     display: none;
   }
@@ -59,12 +70,54 @@ import ThemeIcon from "./ThemeIcon.astro";
       display: none;
     }
   }
+  .animated {
+    animation: animateNav 0.5s;
+}
 
+@keyframes animateNav {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
   .show {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: all 0.8s;
+  }
+  #navbarSupportedContent{
+   
+    transition: height 0.8s;
+  }
+  .navbar-expand-lg{
+    height: auto;
+
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .Expandir{
+    animation: HeightAnimate 0.4s;
+  }
+@keyframes HeightAnimate {
+    from {
+        opacity: 0.5;
+        height: 0;
+
+    }
+    to {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+
+  .navbar{
+    transition: all 0.8s;
   }
   nav {
     position: fixed;
@@ -72,7 +125,7 @@ import ThemeIcon from "./ThemeIcon.astro";
     z-index: 9999;
     background-color: #f20505;
   }
-
+  
   .navbar-nav {
     margin: 0 auto;
     display: flex;
@@ -113,12 +166,41 @@ li:hover::after {
     height: 80px;
     width: 80px;
     display: block;
-  }
-  .navbar-toggler-icon {
-    transition: transform 0.3s ease-out;
+    animation: animarImagen 5s infinite ease alternate;
   }
 
-  .navbar-toggler:hover .navbar-toggler-icon {
-    transform: rotate(90deg);
+  @keyframes animarImagen{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+
+    }
+    100%{
+        transform: translateY(10px)
+    }
+
   }
+
+  #Icono {
+  transition: transform 0.5s ease-out; /* Aplica la transición al ícono directamente */
+}
+
+.navbar-toggler:hover #Icono {
+  
+  
+  transform: rotate(90deg) !important  ;
+}
+
+.navbar-toggler:active{
+    border: none;
+}
+
+.navbar-toggler:focus{
+    outline: none;
+    border-color: red;
+    border: none;
+}
+  
 </style>
